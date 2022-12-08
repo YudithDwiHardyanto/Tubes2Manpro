@@ -6,6 +6,12 @@ body {
 
 /* Basic */
 
+.logo img{
+    height: 50;
+    width: 100;
+}
+
+
 a {
 	color: #3CF;
     text-decoration: none;
