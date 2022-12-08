@@ -287,26 +287,34 @@ a.menu-link { display: none; }
   }
 }
 
-
 /* table */
-table {
-          font-family: arial, sans-serif;
-          border-collapse: collapse;
-          width: 100%;
+.graph-content table  {
+        margin-top: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 40%;
+
         }
 
         td, th {
           border: 1px solid #dddddd;
           text-align: left;
           padding: 8px;
-    
+          border-color: black;
+          color: white;
+          font-family: Montserrat;
+        }
+        a{
+            color: white;
+            font-family: Montserrat;
         }
 
         tr:nth-child(odd) {
-          background-color: #dddddd;
+          background-color: #00468B;
         }
         .buku1 img, .buku2 img, .buku3 img, .buku4 img, .buku5 img{
             width: 220px;
             height: 400px;
         }
-/* Slider */
