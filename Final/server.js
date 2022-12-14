@@ -39,6 +39,18 @@ app.get('/grafikbuku2', (req, res) => {
 	res.render("grafikbuku2");
 });
 
+app.get('/grafikbuku3', (req, res) => {
+	res.render("grafikbuku3");
+});
+
+app.get('/grafikbuku4', (req, res) => {
+	res.render("grafikbuku4");
+});
+
+app.get('/grafikbuku5', (req, res) => {
+	res.render("grafikbuku5");
+});
+
 app.get('/searchbooks', (req, res) => {
 	res.render("searchbooks");
 });
