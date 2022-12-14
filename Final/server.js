@@ -30,6 +30,15 @@ app.get('/grafik', (req, res) => {
 app.get('/grafikbar', (req, res) => {
 	res.render("grafikbar");
 });
+
+app.get('/grafikbuku1', (req, res) => {
+	res.render("grafikbuku1");
+});
+
+app.get('/grafikbuku2', (req, res) => {
+	res.render("grafikbuku2");
+});
+
 app.get('/searchbooks', (req, res) => {
 	res.render("searchbooks");
 });
