@@ -70,6 +70,52 @@ const Book2 = (conn) => {
     })
 }
 
+const Book3 = (conn) => {
+    return new Promise ((resolve, rejects) => {
+        conn.query(`SELECT * FROM book3 LIMIT 10`, (err, result) => {
+            if (err)
+            {
+                rejects(err);
+            }
+            else
+            {
+                resolve(result);
+            }
+        })
+    })
+}
+
+const Book4 = (conn) => {
+    return new Promise ((resolve, rejects) => {
+        conn.query(`SELECT * FROM book4 LIMIT 10`, (err, result) => {
+            if (err)
+            {
+                rejects(err);
+            }
+            else
+            {
+                resolve(result);
+            }
+        })
+    })
+}
+
+const Book5 = (conn) => {
+    return new Promise ((resolve, rejects) => {
+        conn.query(`SELECT * FROM book5 LIMIT 10`, (err, result) => {
+            if (err)
+            {
+                rejects(err);
+            }
+            else
+            {
+                resolve(result);
+            }
+        })
+    })
+}
+
+
 
 app.get('/tabelbuku2', async (req, res) => {
     const conn = await database();
@@ -86,6 +132,33 @@ app.get('/tabelbuku1', async (req, res) => {
     conn.release();
     res.render('tabelbuku1',{
         book1
+    });
+});
+
+app.get('/tabelbuku3', async (req, res) => {
+    const conn = await database();
+    var book3= await Book3(conn);
+    conn.release();
+    res.render('tabelbuku3',{
+        book3
+    });
+});
+
+app.get('/tabelbuku4', async (req, res) => {
+    const conn = await database();
+    var book4= await Book4(conn);
+    conn.release();
+    res.render('tabelbuku4',{
+        book4
+    });
+});
+
+app.get('/tabelbuku5', async (req, res) => {
+    const conn = await database();
+    var book5= await Book5(conn);
+    conn.release();
+    res.render('tabelbuku5',{
+        book5
     });
 });
 

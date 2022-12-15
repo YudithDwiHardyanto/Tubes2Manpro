@@ -1,0 +1,38 @@
+ body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('../images/backgroundgraph.jpg');
+    background-size: 100% auto;
+}
+ table  {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: arial, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+th{
+    padding: 5px;
+    background-color: #052e66;
+    color: white;
+    border: 1px solid white;
+}
+td{
+    padding: 10px;
+    border: 1px solid white;
+    font-family: Montserrat;
+}
+a{
+    color: white;
+    font-family: Montserrat;
+}
+
+tr:nth-child(odd) {
+    background-color: #eeeee4;
+}
+
+tr:nth-child(even) {
+    background-color: #44bcd8;
+}
+
+        

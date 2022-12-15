@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2022 at 06:21 AM
+-- Generation Time: Dec 15, 2022 at 07:11 AM
 -- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,7 @@ CREATE TABLE `book3` (
 -- Dumping data for table `book3`
 --
 
-INSERT INTO `book3` ('Source', 'Target', 'Type', 'Weight', 'Book') VALUES
+INSERT INTO `book3` (`Source`, `Target`, `Type`, `Weight`, `Book`) VALUES
 ('Addam-Marbrand', 'Gyles-Rosby', 'Undirected', '3', '3'),
 ('Addam-Marbrand', 'Jaime-Lannister', 'Undirected', '3', '3'),
 ('Addam-Marbrand', 'Jalabhar-Xho', 'Undirected', '3', '3'),
@@ -934,7 +934,7 @@ INSERT INTO `book3` ('Source', 'Target', 'Type', 'Weight', 'Book') VALUES
 ('Pypar', 'Satin', 'Undirected', '4', '3'),
 ('Qhorin-Halfhand', 'Ragwyle', 'Undirected', '3', '3'),
 ('Qhorin-Halfhand', 'Rattleshirt', 'Undirected', '7', '3');
-INSERT INTO `book3` (`COL 1`, `COL 2`, `COL 3`, `COL 4`, `COL 5`) VALUES
+INSERT INTO `book3` (`Source`, `Target`, `Type`, `Weight`, `Book`) VALUES
 ('Qhorin-Halfhand', 'Samwell-Tarly', 'Undirected', '3', '3'),
 ('Qhorin-Halfhand', 'Ygritte', 'Undirected', '5', '3'),
 ('Qyburn', 'Roose-Bolton', 'Undirected', '3', '3'),
