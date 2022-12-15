@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tabel Buku 1</title>
+	<link rel="stylesheet" href="/css/tabelbuku1.css">
+</head>
+<body>
+	<div class="tabel-buku1">
+		<table>
+			<thead>
+				<tr>
+					<th scope="col">Source</th>
+					<th scope="col">Target</th>
+					<th scope="col">Type</th>
+					<th scope="col">Weight</th>
+					<th scope="col">Book</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% for(let data of book1) { %>
+				<tr>
+					<td><%= data.Source%></td>
+					<td><%= data.Target%></td>
+					<td><%= data.Type%></td>  
+					<td><%= data.Weight%></td>
+					<td><%= data.Book%></td>  
+				</tr>
+				<% } %>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
