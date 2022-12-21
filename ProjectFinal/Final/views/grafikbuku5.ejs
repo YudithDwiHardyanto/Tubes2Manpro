@@ -6,35 +6,43 @@
 	<title>Grafik Buku 5</title>
 </head>
 <body>
-	<h1> Grafik Bar Buku 5 </h1>
+	<h1 style="color: white"> Grafik Bar Buku 5 </h1>
 	<div>
 		<canvas id="myChart"></canvas>
 	  </div>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.7.0/d3.min.js" integrity="sha512-7RUyhA5mpSkxSGGdw1vL6ZLL2GzWPvf/aQ4M8cpXkZiSpCvWb5rgygK+VzUpyXx4vPc0ahrS53nymFbGOQ7ubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	  
 	  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	  <link rel="stylesheet" href="/css/graphbarbuku.css">
+
 	  
 	  <script>
-		const ctx = document.getElementById('myChart');
-	  
-		new Chart(ctx, {
-		  type: 'bar',
-		  data: {
-			labels: ['Daenerys-Targaryen', 'Ramsay-Snow', 'Barristan-Selmy', 'Jon-Snow', 'Penny', 'Daenerys-Targaryen', 'Haldon', 'Bran-Stark', 'Daario-Naharis', 'Jon-Snowk'],
-			datasets: [{
-			  label: '# of Votes',
-			  data: [96, 87, 75, 73, 59, 58, 54, 50, 50, 50],
-			  borderWidth: 1
-			}]
-		  },
-		  options: {
-			scales: {
-			  y: {
-				beginAtZero: true
-			  }
-			}
-		  }
-		});
-	  </script>
+    var canvasElement = document.getElementById ("myChart");
+    var config = {
+        type: "bar",
+        data: {
+         labels: ["Daenerys-Targaryen", "Jon-Snow", "Cersei-Lannister", "barristan-Selmy", "Asha-Greyjuy",
+            "Aegon-Targaryen-(son-of-Rhaegar)", "Arya-Stark", "Davos-Seaworth", "Daario-Naharis", "Hizdhar-zo-Loraq"],
+            datasets: [
+                {
+                    label: "Top 10 interaksi terbanyak",
+                    data: [52, 41, 27, 16, 15, 14, 13, 9, 9, 9],
+                    borderColor: '#ff3300',
+     				backgroundColor: '#ff3300',
+     				barPercentage:0.5
+                },
+            ],
+        },
+        options: {
+        	indexAxis:'x',
+        	scales:{
+        		y:{
+        			beginAtZero: true
+        		}
+        	}
+        }
+    };
+    var graphicChart = new Chart(canvasElement, config);
+</script>
 </body>
 </html>
