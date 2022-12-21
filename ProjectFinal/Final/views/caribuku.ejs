@@ -3,27 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Tabel Buku 1</title>
-	<link rel="stylesheet" href="/css/tabelbuku1.css">
-	<link rel="stylesheet" href="/css/fontawesome.css">
-	<link rel="stylesheet" href="/css/owl.css">
-    <link rel="stylesheet" href="/css/lightbox.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+	<title>Cari Buku</title>
+	<link rel="stylesheet" href="/css/cariBuku.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"/> 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css"> 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script> 
     <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script> 
 </head>
-<!-- <div class="search">
-        <input type="text" class="searchTerm" placeholder="Cari Seri Buku Game Of Thrones">
-        <button type="submit" class="searchButton">
-          <i class="fa fa-search"></i>
-       </button>
-</div> -->
 <body>
-	<div class="tabel-buku1" style="background-color: white; margin: 20px; padding: 20px;">
+	<div class="cari-buku" style="background-color: white; margin: 20px; padding: 20px;">
 		<table id="example" class="table table-striped table-bordered" style="width:100%; color:black">
 			<thead >
 				<tr style="background-color: black; color:white;">
@@ -35,7 +25,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% for(let data of book1) { %>
+				<% for(let data of books) { %>
 				<tr>
 					<td><%= data.Source%></td>
 					<td><%= data.Target%></td>
@@ -49,9 +39,10 @@
 	</div>
 	<script>
     $(document).ready(function() {
-    $('#example').DataTable();
-	});
-	</script>
+    $('#example').DataTable( {      
 
+    	});
+		});
+	</script>
 </body>
 </html>

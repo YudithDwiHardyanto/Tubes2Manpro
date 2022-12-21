@@ -6,6 +6,8 @@ import * as url from 'url';
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
+
+
 const pool = mysql.createPool({
     host: 'localhost',
 	user: 'root',
@@ -25,6 +27,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
 const database = () => {
     return new Promise ((resolve, rejects) => {
         pool.getConnection((err, conn) => {
@@ -40,9 +44,24 @@ const database = () => {
     })
 };
 
+const Books = (conn) => {
+    return new Promise ((resolve, rejects) => {
+        conn.query(`SELECT * FROM books`, (err, result) => {
+            if (err)
+            {
+                rejects(err);
+            }
+            else
+            {
+                resolve(result);
+            }
+        })
+    })
+}
+
 const Book1 = (conn) => {
     return new Promise ((resolve, rejects) => {
-        conn.query(`SELECT * FROM book1 LIMIT 10`, (err, result) => {
+        conn.query(`SELECT * FROM book1 WHERE Book = 1`, (err, result) => {
             if (err)
             {
                 rejects(err);
@@ -57,7 +76,7 @@ const Book1 = (conn) => {
 
 const Book2 = (conn) => {
     return new Promise ((resolve, rejects) => {
-        conn.query(`SELECT * FROM book2 LIMIT 10`, (err, result) => {
+        conn.query(`SELECT * FROM book2 WHERE Book = 2`, (err, result) => {
             if (err)
             {
                 rejects(err);
@@ -72,7 +91,7 @@ const Book2 = (conn) => {
 
 const Book3 = (conn) => {
     return new Promise ((resolve, rejects) => {
-        conn.query(`SELECT * FROM book3 LIMIT 10`, (err, result) => {
+        conn.query(`SELECT * FROM book3 WHERE Book = 3`, (err, result) => {
             if (err)
             {
                 rejects(err);
@@ -87,7 +106,7 @@ const Book3 = (conn) => {
 
 const Book4 = (conn) => {
     return new Promise ((resolve, rejects) => {
-        conn.query(`SELECT * FROM book4 LIMIT 10`, (err, result) => {
+        conn.query(`SELECT * FROM book4 WHERE Book = 4`, (err, result) => {
             if (err)
             {
                 rejects(err);
@@ -102,7 +121,7 @@ const Book4 = (conn) => {
 
 const Book5 = (conn) => {
     return new Promise ((resolve, rejects) => {
-        conn.query(`SELECT * FROM book5 LIMIT 10`, (err, result) => {
+        conn.query(`SELECT * FROM book5 WHERE Book = 5`, (err, result) => {
             if (err)
             {
                 rejects(err);
@@ -115,7 +134,23 @@ const Book5 = (conn) => {
     })
 }
 
+app.get('/caribuku', async (req, res) => {
+    const conn = await database();
+    var books = await Books(conn);
+    conn.release();
+    res.render('caribuku',{
+        books
+    });
+});
 
+app.get('/tabelbuku1', async (req, res) => {
+    const conn = await database();
+    var book1 = await Book1(conn);
+    conn.release();
+    res.render('tabelbuku1',{
+        book1
+    });
+});
 
 app.get('/tabelbuku2', async (req, res) => {
     const conn = await database();
@@ -126,14 +161,7 @@ app.get('/tabelbuku2', async (req, res) => {
     });
 });
 
-app.get('/tabelbuku1', async (req, res) => {
-    const conn = await database();
-    var book1= await Book1(conn);
-    conn.release();
-    res.render('tabelbuku1',{
-        book1
-    });
-});
+
 
 app.get('/tabelbuku3', async (req, res) => {
     const conn = await database();

@@ -5,15 +5,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Tabel Buku 3</title>
 	<link rel="stylesheet" href="/css/tabelbuku3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"/> 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css"> 
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script> 
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script> 
 </head>
 <body>
-	<div class="tabel-buku1">
-		<table>
-			<thead>
-				<tr>
+	<div class="tabel-buku1" style="background-color: white; margin: 20px; padding: 20px;">
+		<table id="example" class="table table-striped table-bordered" style="width:100%; color:black">
+			<thead >
+				<tr style="background-color: black; color:white;">
 					<th scope="col">Source</th>
 					<th scope="col">Target</th>
-					<th scope="col">Type</th>
+					<!-- <th scope="col">Type</th> -->
 					<th scope="col">Weight</th>
 					<th scope="col">Book</th>
 				</tr>
@@ -23,7 +29,7 @@
 				<tr>
 					<td><%= data.Source%></td>
 					<td><%= data.Target%></td>
-					<td><%= data.Type%></td>  
+					<!-- <td><%= data.Type%></td> -->  
 					<td><%= data.Weight%></td>
 					<td><%= data.Book%></td>  
 				</tr>
@@ -31,5 +37,10 @@
 			</tbody>
 		</table>
 	</div>
+	<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+	});
+	</script>
 </body>
 </html>
