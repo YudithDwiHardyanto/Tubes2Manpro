@@ -6,35 +6,42 @@
 	<title>Grafik Buku 2</title>
 </head>
 <body>
-	<h1> Grafik Bar Buku 2 </h1>
+	<h1 style="color: white"> Grafik Bar Buku 2 </h1>
 	<div>
 		<canvas id="myChart"></canvas>
 	  </div>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.7.0/d3.min.js" integrity="sha512-7RUyhA5mpSkxSGGdw1vL6ZLL2GzWPvf/aQ4M8cpXkZiSpCvWb5rgygK+VzUpyXx4vPc0ahrS53nymFbGOQ7ubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	  
 	  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	  <link rel="stylesheet" href="/css/graphbarbuku.css">
 	  
-	  <script>
-		const ctx = document.getElementById('myChart');
-	  
-		new Chart(ctx, {
-		  type: 'bar',
-		  data: {
-			labels: ['Joffrey-Baratheon', 'Cersei-Lannister', 'Joffrey-Baratheon', 'Renly-Baratheon', 'Cersei-Lannister', 'Jeor-Mormont', 'Tyrion-Lannister', 'Bran-Stark', 'Davos-Seaworth', 'Bran-Stark'],
-			datasets: [{
-			  label: '# of Votes',
-			  data: [91, 87, 76, 70, 63, 63, 63, 59, 58, 54],
-			  borderWidth: 1
-			}]
-		  },
-		  options: {
-			scales: {
-			  y: {
-				beginAtZero: true
-			  }
-			}
-		  }
-		});
-	  </script>
+	 <script>
+    var canvasElement = document.getElementById ("myChart");
+    var config = {
+        type: "bar",
+        data: {
+            labels: ["Arya-Stark", "Cersei-Lannister", "Catelyn-Stark", "Bran-Stark", "Joffrey-Baratheon",
+            "Amory-Lorch", "Eddard-Stark", "Daenerys-Targaryen", "Jaime-Lannister", "Jon-Snow"],
+            datasets: [
+                {
+                    label: "Top 10 interaksi terbanyak",
+                    data: [37, 37, 29, 27, 24, 18, 15, 15, 14, 13],
+                    borderColor: '#ff3300',
+     				backgroundColor: '#ff3300',
+     				barPercentage:0.5
+                },
+            ],
+        },
+        options: {
+        	indexAxis:'x',
+        	scales:{
+        		y:{
+        			beginAtZero: true
+        		}
+        	}
+        }
+    };
+    var graphicChart = new Chart(canvasElement, config);
+</script>
 </body>
 </html>
