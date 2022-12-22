@@ -302,7 +302,7 @@ a.menu-link { display: none; }
           border: 1px solid #dddddd;
           text-align: left;
           padding: 8px;
-          border-color: black;
+          border-color: white;
           color: white;
           font-family: Montserrat;
         }
@@ -312,6 +312,10 @@ a.menu-link { display: none; }
         }
 
         tr:nth-child(odd) {
+          background-color: black;
+        }
+
+        tr:nth-child(even) {
           background-color: black;
         }
         .buku1 img, .buku2 img, .buku3 img, .buku4 img, .buku5 img{
