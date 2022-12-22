@@ -6,6 +6,10 @@ body {
     background-size: 100% auto;
 
 }
+h1{
+    text-align: center;
+    padding-top: 130px;
+}
 
 /* Basic */
 
@@ -289,7 +293,7 @@ a.menu-link { display: none; }
 }
 
 #content{
-    background-color: black;
+    background-color: grey;
     width: 80%;
     height: 500px;
     margin: 100px auto;
