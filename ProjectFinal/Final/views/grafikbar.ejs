@@ -22,6 +22,15 @@
     <link rel="stylesheet" href="/css/grafikbar.css">
     <link rel="stylesheet" href="/css/owl.css">
     <link rel="stylesheet" href="/css/lightbox.css">
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style type="text/css">
+        #mynetwork {
+            width: 600px;
+            height: 400px;
+            border: 1px solid lightgray;
+            text-align: center;
+        }
+    </style>
 <!--
     
 TemplateMo 557 Grad School
@@ -50,6 +59,97 @@ https://templatemo.com/tm-557-grad-school
     </nav>
 
   </header>
+  <div id="content">
+    <div id="mynetwork"></div>
+
+    <script type="text/javascript">
+        let nodes = new vis.DataSet([   
+            { id: 1, label: "Petyr-Baelish" },
+            { id: 2, label: "Eddard-Stark" },
+            { id: 3, label: "Robert-Baratheon" },
+            { id: 4, label: "Cersei-Lannister" },
+            { id: 5, label: "Bran-Stark" },
+            { id: 6, label: "Robb-Stark" },
+            { id: 7, label: "Arya-Stark" },
+            { id: 8, label: "Sansa-Stark" },
+            { id: 9, label: "Joffrey-Baratheon" },
+            { id: 10, label: "Drogo" },
+            { id: 11, label: "Daenerys-Targaryen" },
+            { id: 12, label: "Jorah-Mormont" },
+            { id: 13, label: "Jeor-Mormont" },
+            { id: 14, label: "Jon-Snow" },
+            { id: 15, label: "Samwell-Tarly" },
+        ]);
+        let edges = new vis.DataSet([
+            { from: 4, to: 3, label: "72" },
+            { from: 3, to: 2, label: "291" },
+            { from: 2, to: 1, label: "81" },
+            { from: 5, to: 6, label: "112" },
+            { from: 7, to: 8, label: "104" },
+            { from: 8, to: 9, label: "87" },
+            { from: 10, to: 11, label: "101" },
+            { from: 11, to: 12, label: "75" },
+            { from: 13, to: 14, label: "81" },
+            { from: 14, to: 15, label: "81" },
+
+
+
+
+
+
+        ]);
+
+
+        let data = {
+            nodes: nodes,
+            edges: edges
+        };
+        /*let options = {
+            nodes:{
+              width:'400px',
+                color: '#ffffff',
+     
+                font: '15px arial black',
+              
+                shadow: true,
+                shape: 'circle',
+                margin: 5
+
+            },
+            edges: {
+
+                color: 'black',
+                length: 200,
+               
+                
+            }
+            
+        };*/
+        const options = {
+          nodes:{
+              width:'400px',
+                color: '#ffffff',
+                font: '15px arial black',
+                shadow: true,
+                shape: 'elipse',
+                margin: 20
+
+            },
+          layout: {
+            hierarchical: {
+              direction: 'UD',
+              sortMethod: 'directed',
+              levelSeparation: 100,
+            },
+          },
+          
+        };
+        let container = document.getElementById("content");
+
+        let network = new vis.Network(container, data, options);
+        network.stabilize();
+    </script>
+  </div>
 <!-- ***** Main Banner Area Start ***** -->
      
 </body>

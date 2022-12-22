@@ -15,6 +15,11 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script> 
     <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script> 
+
+    <style type="text/css">
+    	
+
+    </style>
 </head>
 <!-- <div class="search">
         <input type="text" class="searchTerm" placeholder="Cari Seri Buku Game Of Thrones">
@@ -49,7 +54,16 @@
 	</div>
 	<script>
     $(document).ready(function() {
-    $('#example').DataTable();
+    $('#example').DataTable({
+    	"bInfo": false,
+    	"bLengthChange": false,
+    	pagingType :'simple_numbers',
+    	"dom": '<f>',
+    	language: {
+        searchPlaceholder: "Cari karakter"
+    	}
+    	
+    });
 	});
 	</script>
 

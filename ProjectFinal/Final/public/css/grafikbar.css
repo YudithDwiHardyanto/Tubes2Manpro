@@ -4,6 +4,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-image: url('../images/backgroundgrafikbar.jpg');
     background-size: 100% auto;
+
 }
 
 /* Basic */
@@ -285,4 +286,12 @@ a.menu-link { display: none; }
     border: 2px solid transparent;
     border-bottom: 1px solid rgba(250,250,250,0.25);
   }
+}
+
+#content{
+    background-color: grey;
+    width: 80%;
+    height: 500px;
+    margin: 100px auto;
+    opacity: 0.7;
 }
