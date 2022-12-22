@@ -190,6 +190,23 @@ app.get('/tabelbuku5', async (req, res) => {
     });
 });
 
+app.get ('/undirectedgraph1', async (req, res) => { 
+    res.render('undirectedgraph1');
+});
+
+app.get ('/undirectedgraph2', async (req, res) => { 
+    res.render('undirectedgraph2');
+});
+
+app.get ('/undirectedgraph3', async (req, res) => { 
+    res.render('undirectedgraph3');
+});
+app.get ('/undirectedgraph4', async (req, res) => { 
+    res.render('undirectedgraph4');
+});
+app.get ('/undirectedgraph5', async (req, res) => { 
+    res.render('undirectedgraph5');
+});
 
 app.get ('/home', async (req, res) => { 
     res.render('home');
